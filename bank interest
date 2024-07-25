@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+class Bank {
+    float getROI() {
+        return 0;
+    }
+}
+
+class SBI extends Bank {
+    // Override the getROI method for SBI
+    float getROI() {
+        return 8.4f;
+    }
+}
+
+class ICICI extends Bank {
+    // Override the getROI method for ICICI
+    float getROI() {
+        return 7.3f;
+    }
+}
+
+class AXIS extends Bank {
+    // Override the getROI method for AXIS
+    float getROI() {
+        return 9.7f;
+    }
+}
+
+public class BankInterest {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner input = new Scanner(System.in);
+
+        // Prompt the user to select a bank
+        System.out.println("Select a bank to get the rate of interest:");
+        System.out.println("1. SBI");
+        System.out.println("2. ICICI");
+        System.out.println("3. AXIS");
+        System.out.print("Enter your choice (1/2/3): ");
+
+        // Read the user's choice
+        int choice = input.nextInt();
+
+        // Create a reference variable of type Bank
+        Bank b;
+
+        // Assign the appropriate bank subclass based on the user's choice
+        switch (choice) {
+            case 1:
+                b = new SBI();
+                break;
+            case 2:
+                b = new ICICI();
+                break;
+            case 3:
+                b = new AXIS();
+                break;
+            default:
+                System.out.println("Invalid choice");
+                input.close();
+                return; // Exit the program if the choice is invalid
+        }
+
+        // Display the rate of interest for the selected bank
+        System.out.println("Rate of Interest: " + b.getROI() + "%");
+
+        // Close the scanner
+        input.close();
+    }
+}
