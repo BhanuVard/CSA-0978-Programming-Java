@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class ak {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Please enter a string:");
+        String name = input.nextLine(); // Read the entire line of input from the user
+        
+        name = name.trim(); // Trim any leading or trailing whitespace
+        
+        int len = 0; // Initialize length counter for the last word
+        for (int i = name.length() - 1; i >= 0; i--) { // Iterate backwards through the string
+            if (name.charAt(i) == ' ') // Break the loop if a space is encountered
+                break;
+            else
+                len++; // Otherwise, increase the length counter
+        }
+        
+        System.out.println("Length of the last word: " + len); // Print the length of the last word
+    }
+}
