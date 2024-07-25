@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class ak {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Ask user for lower and upper bounds
+        System.out.print("Enter the lower bound: ");
+        int lower = input.nextInt();
+        
+        System.out.print("Enter the upper bound: ");
+        int upper = input.nextInt();
+        
+        int i = 0, x = 1;
+
+        // Loop to find and print numbers based on the given condition
+        while (i < upper) {
+            int sum = 0;
+            int y = x * x;
+            int t = y;
+
+            // Calculate the sum of digits of y (x^2)
+            while (y != 0) {
+                int rem = y % 10;
+                sum = sum + rem;
+                y = y / 10;
+            }
+
+            // Print the number if the sum of its digits is less than 10
+            if (sum < 10 && t >= lower && t <= upper) {
+                System.out.print(t + " ");
+            }
+
+            i = x * x;
+            x++;
+        }
+
+        // Close the scanner
+        input.close();
+    }
+}
