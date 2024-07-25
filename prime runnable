@@ -1,0 +1,47 @@
+public class PrimeCheck implements Runnable {
+    private int number;
+
+    public PrimeCheck(int number) {
+        this.number = number;
+    }
+
+    @Override
+    public void run() {
+        if (isPrime(number)) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
+    }
+
+    private boolean isPrime(int num) {
+        if (num <= 1) return false;
+        if (num == 2) return true; // 2 is the only even prime number
+        if (num % 2 == 0) return false; // other even numbers are not primes
+
+        // Check odd numbers from 3 to sqrt(num)
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        // Example number
+        int number = 29; // You can change this number to test
+
+        // Create a new PrimeCheck instance and a thread to run it
+        PrimeCheck primeCheck = new PrimeCheck(number);
+        Thread thread = new Thread(primeCheck);
+
+        // Start the thread
+        thread.start();
+
+        // Optional: wait for the thread to finish
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
