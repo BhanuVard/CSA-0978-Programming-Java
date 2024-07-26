@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class LastWordLength {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String name = input.nextLine().trim(); // Read the entire line and trim leading/trailing spaces
+
+        // Split the string by spaces to get all words
+        String[] words = name.split(" ");
+        // Get the last word and its length
+        int len = words[words.length - 1].length();
+
+        System.out.println("Length of the last word: " + len);
+    }
+}
