@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Sort {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+       String str=scanner.nextLine();
+       String[] words=str.split(",");
+       Arrays.sort(words);
+       for(int i=0;i<words.length;i++)
+       {
+           System.out.print(words[i]);
+           if(i<words.length-1)
+           {
+               System.out.print(",");
+           }
+       }
+    }
+}
+       
