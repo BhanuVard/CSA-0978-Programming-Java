@@ -1,35 +1,47 @@
-// Online Java Compiler
 import java.util.Scanner;
-class A extends Thread
-{
-    public void run()
-    {
-        int n=5;
-        for(int i=1;i<=n;i++)
-        {
-            System.out.println(n+"X"+i+"="+(n*i));
+
+class A extends Thread {
+    private int n;
+
+    public A(int n) {
+        this.n = n;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Thread A: " + n + " X " + i + " = " + (n * i));
         }
     }
 }
-class B extends Thread
-{
-    public void run()
-    {
-    int n=10;
-    for(int i=0;i<=n;i++)
-    {
-        System.out.println(n+"X"+i+"="+(n*i));
+
+class B extends Thread {
+    private int n;
+
+    public B(int n) {
+        this.n = n;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Thread B: " + n + " X " + i + " = " + (n * i));
+        }
     }
 }
-}
-public class ak
-{
-    public static void main(String[] args)
-    {
-        Scanner scanner=new Scanner(System.in);
-        A thread=new A();
-        B thread1=new B();
-        thread.start();
-        thread1.start();
+
+public class MultiplicationTables {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter a number for thread A's multiplication table:");
+        int numA = input.nextInt();
+
+        System.out.println("Enter a number for thread B's multiplication table:");
+        int numB = input.nextInt();
+
+        A threadA = new A(numA);
+        B threadB = new B(numB);
+
+        threadA.start();
+        threadB.start();
     }
 }
