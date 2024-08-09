@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+class StringReverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Get the string input from the user
+        System.out.print("Enter a string: ");
+        String name = scanner.nextLine();
+        
+        // Convert the string to a character array
+        char[] arr = name.toCharArray();
+        
+        // Reverse and print the string using the same loop structure
+        System.out.println("Reversed string:");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i]);
+        }
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
+ 
