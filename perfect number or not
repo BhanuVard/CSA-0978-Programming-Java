@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class PerfectNumberChecker {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Get the number from the user
+        System.out.print("Enter a number to check if it is a perfect number: ");
+        int n = input.nextInt();
+        
+        int sumOfFactors = 0;
+
+        // Calculate the sum of proper divisors
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sumOfFactors += i;
+            }
+        }
+
+        // Check if the number is a perfect number
+        if (n == sumOfFactors) {
+            System.out.println("It's a perfect number");
+        } else {
+            System.out.println("It's not a perfect number");
+        }
+
+        input.close();
+    }
+}
