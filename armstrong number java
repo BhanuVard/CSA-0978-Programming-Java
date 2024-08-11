@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class bhanu
+{
+    public static void main(String[] args)
+    {
+    Scanner scanner=new Scanner(System.in);
+    System.out.print("enter a number:");
+    int n=scanner.nextInt();
+   int  N1=n;
+    int sum=0;
+    while(N1!=0)
+    {
+        int rem=N1%10;
+        sum=sum+(rem*rem*rem);
+        N1=N1/10;
+    }
+    if(n==sum)
+    
+        System.out.println("armstrong number");
+    else
+    System.out.print("not armstrong number:");
+}
+}
