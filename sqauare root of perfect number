@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class SquareRootExample {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Get the input number from the user
+        System.out.print("Enter a number: ");
+        double n = input.nextDouble();
+
+        // Calculate the square root using Math.sqrt()
+        double sqrt = Math.sqrt(n);
+
+        // Display the square root and its negative
+        System.out.println("Square root: " + sqrt);
+        System.out.println("Negative square root: " + (-sqrt));
+
+        // Close the scanner
+        input.close();
+    }
+}
