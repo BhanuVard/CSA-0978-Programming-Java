@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class MatrixSum {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Define the size of the matrices
+        int rows = 2;
+        int cols = 2;
+
+        // Initialize matrices
+        int[][] mat1 = new int[rows][cols];
+        int[][] mat2 = new int[rows][cols];
+        int[][] mat_sum = new int[rows][cols];
+
+        // Input elements for the first matrix
+        System.out.println("Enter elements for the first matrix (2x2):");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                mat1[i][j] = input.nextInt();
+            }
+        }
+
+        // Input elements for the second matrix
+        System.out.println("Enter elements for the second matrix (2x2):");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                mat2[i][j] = input.nextInt();
+            }
+        }
+
+        // Calculate the sum of the matrices
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                mat_sum[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+
+        // Print the resulting matrix
+        System.out.println("Sum of the matrices:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(mat_sum[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        input.close();
+    }
+}
